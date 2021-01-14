@@ -12,7 +12,7 @@ namespace TRT_KCVolume.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.7.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.6.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -181,7 +181,7 @@ namespace TRT_KCVolume.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("D:\\Programming\\3. Win Form\\TRT_KCVolume\\TRT_KCVolume\\bin\\Debug\\Source")]
+        [global::System.Configuration.DefaultSettingValueAttribute("D:\\Programming\\2. Win App\\TRT_KCVolume\\TRT_KCVolume\\bin\\Debug\\Source")]
         public string PathExcelTemplateSource {
             get {
                 return ((string)(this["PathExcelTemplateSource"]));
@@ -193,7 +193,7 @@ namespace TRT_KCVolume.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("D:\\Programming\\3. Win Form\\TRT_KCVolume\\TRT_KCVolume\\bin\\Debug\\Export")]
+        [global::System.Configuration.DefaultSettingValueAttribute("D:\\Programming\\2. Win App\\TRT_KCVolume\\TRT_KCVolume\\bin\\Debug\\Export")]
         public string PathExcelExport {
             get {
                 return ((string)(this["PathExcelExport"]));

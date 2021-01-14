@@ -144,9 +144,9 @@ namespace TRT_KCVolume
 
         private void ExportExcel(string PathExcelExport, string FileSource, string strShift, string strMonth, string strFileName, string strFileType)
         {
-            try
-            {
-                int Month = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
+            //try
+            //{
+                int DaysInMonth = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
                 int DayCurrent = DateTime.Now.Day;
                 Excel.Application xlApp = new Excel.Application();
                 Excel.Workbook xlWorkBook = xlApp.Workbooks.Open(FileSource);
@@ -176,7 +176,52 @@ namespace TRT_KCVolume
                         {
                             Range rng = xlWorkSheet.get_Range("D28", "D319");
                             Range findRng = rng.Find(data.PartNo);
-                            xlWorkSheet.Cells[findRng.Row, 9 + DayCurrent] = data.Qty;
+
+                            if (findRng is null)
+                            {
+                                for (int i = 1; i <= 300; i++)
+                                {
+                                    var PartNo = (xlWorkSheet.Cells[27+i, 4] as Range).Value;
+                                    if (PartNo == null )
+                                    {
+                                        xlWorkSheet.Cells[27 + i, 4] = data.PartNo;
+                                        xlWorkSheet.Cells[27 + i, 9 + DayCurrent] = data.Qty;
+                                        for (int l = 1; l <= DaysInMonth + 8; l++)
+                                        {
+                                            xlWorkSheet.Cells[27 + i, 1 + l].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Red);
+                                        }
+                                        break;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                xlWorkSheet.Cells[findRng.Row, 9 + DayCurrent] = data.Qty;
+                            }
+                            //excel set row hide
+                            for (int i = 1; i <= 300; i++)
+                            {
+                                try
+                                {
+                                    var STDManhour = (xlWorkSheet.Cells[27 + i, 5] as Range).Value.ToString();
+                                    if (STDManhour == "0")
+                                    {
+                                        xlWorkSheet.Rows[27 + i].Hidden = true;
+                                    }
+                                }
+                                catch (Exception)
+                                {
+                                    xlWorkSheet.Rows[27 + i].Hidden = true;
+                                }
+                                
+                            }
+
+                            //excel set this day
+                            for (int i = 8; i <= 546; i++)
+                            {
+                                xlWorkSheet.Cells[i, 9 + DayCurrent].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.BlueViolet);
+                            }
+
                             //insert db 
                         }
                     }
@@ -218,13 +263,13 @@ namespace TRT_KCVolume
 
                 lbFile.Items.Insert(0, "Update Success : " + strFileName + strFileType + " " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                 log_file("Update Success : " + strFileName + strFileType + " " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-            }
-            catch (Exception ex)
-            {
+            //}
+            //catch (Exception ex)
+            //{
 
-                lbFile.Items.Insert(0, "Volume Error : " + strFileName + strFileType + " " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                log_file("Volume Error : " + strFileName + strFileType + " " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-            }
+            //    lbFile.Items.Insert(0, "Volume Error : " + strFileName + strFileType + " " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+            //    log_file("Volume Error : " + strFileName + strFileType + " " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+            //}
 
         }
 
