@@ -1,0 +1,51 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TRT_KCVolume.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DBServer" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="DBName" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="DBUser" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="DBPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Host" Type="System.String" Scope="User">
+      <Value Profile="(Default)">smtp.gmail.com</Value>
+    </Setting>
+    <Setting Name="Email" Type="System.String" Scope="User">
+      <Value Profile="(Default)">demo.thanakrit.j@gmail.com</Value>
+    </Setting>
+    <Setting Name="Password" Type="System.String" Scope="User">
+      <Value Profile="(Default)">demo123%</Value>
+    </Setting>
+    <Setting Name="Port" Type="System.String" Scope="User">
+      <Value Profile="(Default)">587</Value>
+    </Setting>
+    <Setting Name="SenderDisplay" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ทดสอบ</Value>
+    </Setting>
+    <Setting Name="ShiftAStart" Type="System.String" Scope="User">
+      <Value Profile="(Default)">08:00</Value>
+    </Setting>
+    <Setting Name="ShiftAEnd" Type="System.String" Scope="User">
+      <Value Profile="(Default)">20:00</Value>
+    </Setting>
+    <Setting Name="ShiftBStart" Type="System.String" Scope="User">
+      <Value Profile="(Default)">20:00</Value>
+    </Setting>
+    <Setting Name="ShiftBEnd" Type="System.String" Scope="User">
+      <Value Profile="(Default)">08:00</Value>
+    </Setting>
+    <Setting Name="PathExcelTemplateSource" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\Programming\3. Win Form\TRT_KCVolume\TRT_KCVolume\bin\Debug\Source</Value>
+    </Setting>
+    <Setting Name="PathExcelExport" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\Programming\3. Win Form\TRT_KCVolume\TRT_KCVolume\bin\Debug\Export</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
