@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
@@ -17,8 +16,6 @@ using System.Net.Http;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using ChoETL;
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
-using Microsoft.Build.Tasks.Deployment.Bootstrapper;
 
 namespace TRT_KCVolume
 {
@@ -127,6 +124,11 @@ namespace TRT_KCVolume
                     w.Write(p);
             }
             var json = DeserializeToList<TRTData>(sb.ToString());
+            var dt = DateTime.Parse("2020-12-14 23:59:47");
+            var dt2 = DateTime.Parse("2020-12-14 23:59:47");
+
+            var jsonA = json.Where(x => x.ProductionTime >= dt && x.ProductionTime <= dt2).ToList();
+                //Shift.Machine.Where(x => x.MachineNo == strFileName).ToList();
         }
 
         public static List<string> InvalidJsonElements;
@@ -162,7 +164,7 @@ namespace TRT_KCVolume
             public string BeforeUpdate { get; set; }
             public string UpdateQty { get; set; }
             public string AfterUpdate { get; set; }
-            public string ProductionTime { get; set; }
+            public DateTime ProductionTime { get; set; }
             public string ImportDate { get; set; }
             public string FileName { get; set; }
             public string SEQ { get; set; }
