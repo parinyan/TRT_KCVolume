@@ -126,7 +126,7 @@ namespace TRT_KCVolume
                 using (var w = new ChoJSONWriter(sb))
                     w.Write(p);
             }
-            var validProdcuts = DeserializeToList<TRTData>(sb.ToString());
+            var json = DeserializeToList<TRTData>(sb.ToString());
         }
 
         public static List<string> InvalidJsonElements;
